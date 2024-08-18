@@ -1,0 +1,106 @@
+import math
+from tkinter import *
+
+def add():
+    x = float(e1.get())
+    y = float(e2.get())
+    z = x + y
+    result_label.config(text=z)
+
+def sub():
+    x = float(e1.get())
+    y = float(e2.get())
+    z = x - y
+    result_label.config(text=z)
+
+def mult():
+    x = float(e1.get())
+    y = float(e2.get())
+    z = x * y
+    result_label.config(text=z)
+
+def div():
+    x = float(e1.get())
+    y = float(e2.get())
+    z = x / y
+    result_label.config(text=z)
+
+def sin():
+    x = float(e1.get())
+    z = round(math.sin(x), 4)
+    result_label.config(text=z)
+
+def cos():
+    x = float(e1.get())
+    z = round(math.cos(x), 4)
+    result_label.config(text=z)
+
+def tan():
+    x = float(e1.get())
+    z = round(math.tan(x), 4)
+    result_label.config(text=z)
+
+def log():
+    x = float(e1.get())
+    z = round(math.log(x), 4)
+    result_label.config(text=z)
+
+def sqrt():
+    x = float(e1.get())
+    z = round(math.sqrt(x), 4)
+    result_label.config(text=z)
+
+def sqr():
+    x = float(e1.get())
+    z = round(x ** 2, 4)
+    result_label.config(text=z)
+
+def cube():
+    x = float(e1.get())
+    z = round(x ** 3, 4)
+    result_label.config(text=z)
+
+def fact():
+    x = int(e1.get())
+    z = math.factorial(x)
+    result_label.config(text=z)
+
+# Create main window
+m = Tk()
+m.title("WELCOME TO SABRINA'S GUI")
+m.minsize(width=450, height=400)
+m.maxsize(width=450, height=400)
+
+# Labels and Entry widgets
+heading = Label(m, text="SCIENTIFIC CALCULATOR", bg='gray', fg="black", font='arialblack 23 bold', borderwidth=23, relief="sunken")
+heading.place(x=10, y=10)
+
+Label(m, text="Enter number 1", bg="lightgray", fg="black", font="algerian 16 bold").place(x=10, y=90)
+Label(m, text="Enter number 2", bg="lightgray", fg="black", font="algerian 16 bold").place(x=10, y=130)
+Label(m, text="Result", bg="lightgray", fg="black", font="algerian 16 bold").place(x=10, y=170)
+
+result_label = Label(m, bg="lightgray", fg="blue", font="arialblack 16 bold")
+result_label.place(x=220, y=170)
+
+e1 = Entry(m, bg="lightgray", width=20, font="erasBoldITC 15")
+e1.place(x=220, y=90)
+e2 = Entry(m, bg="lightgray", width=20, font="erasBoldITC 15")
+e2.place(x=220, y=130)
+
+# Buttons
+Button(m, text=" + ", bg="gray", fg="black", font="43", padx=23, command=add).place(x=30, y=220)
+Button(m, text=" - ", bg="gray", fg="black", font="43", padx=23, command=sub).place(x=150, y=220)
+Button(m, text=" x ", bg="gray", fg="black", font="43", padx=23, command=mult).place(x=250, y=220)
+Button(m, text=" ÷ ", bg="gray", fg="black", font="43", padx=23, command=div).place(x=350, y=220)
+
+Button(m, text="sin", bg="gray", fg="black", font="43", padx=18, command=sin).place(x=30, y=280)
+Button(m, text="cos", bg="gray", fg="black", font="43", padx=16, command=cos).place(x=150, y=280)
+Button(m, text="tan", bg="gray", fg="black", font="43", padx=16, command=tan).place(x=250, y=280)
+Button(m, text="log", bg="gray", fg="black", font="43", padx=16, command=log).place(x=350, y=280)
+
+Button(m, text="√", bg="gray", fg="black", font="43", padx=6, command=sqrt).place(x=30, y=340)
+Button(m, text="x²", bg="gray", fg="black", font="43", padx=6, command=sqr).place(x=150, y=340)
+Button(m, text="x³", bg="gray", fg="black", font="43", padx=16, command=cube).place(x=250, y=340)
+Button(m, text="!", bg="gray", fg="black", font="43", padx=6, command=fact).place(x=350, y=340)
+
+m.mainloop()
